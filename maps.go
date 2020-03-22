@@ -14,4 +14,9 @@ func main() {
 		10.1, 10.2,
 	}
 	fmt.Println(m)
+	var x = map[string]Vertex{
+		"first":  {10, 12},
+		"second": {30, 50},
+	}
+	fmt.Println(x)
 }
