@@ -4,6 +4,8 @@ import (
 	"fmt"
 )
 
+// find the number in the given array which is not duplicate
+
 func search_in_array(arr []int, num int) []int {
 	for x, y := range arr {
 		if y == num {
