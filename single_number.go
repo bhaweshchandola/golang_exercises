@@ -14,12 +14,12 @@ func search_in_array(arr []int, num int) []int {
 		}
 	}
 
-	return arr
+	return append(arr, num)
 }
 
 func main() {
 	seen := make([]int, 0)
-	inp := [5]int{2, 2, 1, 1, 4}
+	inp := [3]int{1, 0, 1}
 	fmt.Println(seen, inp)
 	for _, y := range inp {
 		if len(seen) == 0 {
