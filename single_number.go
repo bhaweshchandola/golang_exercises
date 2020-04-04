@@ -4,22 +4,27 @@ import (
 	"fmt"
 )
 
-func search_in_array(arr []int, num int) bool {
-	for _, y := range arr {
+func search_in_array(arr []int, num int) []int {
+	for x, y := range arr {
 		if y == num {
-			return true
+			arr[len(arr)-1], arr[x] = arr[x], arr[len(arr)-1]
+			return arr[:len(arr)-1]
 		}
 	}
 
-	return false
+	return arr
 }
 
 func main() {
 	seen := make([]int, 0)
 	inp := [5]int{2, 2, 1, 1, 4}
 	fmt.Println(seen, inp)
-	seen = append(seen, 4)
 	for _, y := range inp {
-		fmt.Println(search_in_array(seen, y))
+		if len(seen) == 0 {
+			seen = append(seen, y)
+		} else {
+			seen = search_in_array(seen, y)
+		}
 	}
+	fmt.Println("final_answer", seen[0])
 }
