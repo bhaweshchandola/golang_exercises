@@ -12,6 +12,8 @@ func main() {
 	primes := [6]int{2, 3, 5, 7, 11, 13}
 	fmt.Println(primes)
 
+	// slices doesn;t store any data just the reference. if actual data is changed
+	// sliced data is changed also
 	var sli []int = primes[1:4]
 	fmt.Println(sli)
 }
